@@ -10,12 +10,12 @@ class Template extends React.Component {
     const { children } = this.props
 
     return (
-      <>
+      <div className='bg-blue-50'>
         <Seo />
         <Navigation />
-        <main>{children}</main>
+        <main className='bg-blue-50'>{children}</main>
         <Footer />
-      </>
+      </div>
     )
   }
 }

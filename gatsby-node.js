@@ -5,7 +5,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   // Define a template for blog post
   const blogPost = path.resolve('./src/templates/blog-post.js')
-
   const result = await graphql(
     `
       {
@@ -15,10 +14,15 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             slug
           }
         }
+        allContentfulProject {
+          nodes {
+            name
+            slug
+          }
+        }
       }
     `
   )
-
   if (result.errors) {
     reporter.panicOnBuild(
       `There was an error loading your Contentful posts`,
@@ -26,7 +30,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     )
     return
   }
-
   const posts = result.data.allContentfulBlogPost.nodes
 
   // Create blog posts pages
@@ -46,6 +49,21 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           slug: post.slug,
           previousPostSlug,
           nextPostSlug,
+        },
+      })
+    })
+  }
+
+  const projectTemplate = path.resolve('./src/templates/project-page.js')
+  const projects = result.data.allContentfulProject.nodes
+
+  if (projects.length > 0) {
+    projects.forEach((project, index) => {
+      createPage({
+        path: `/project/${project.slug}/`,
+        component: projectTemplate,
+        context: {
+          slug: project.slug,
         },
       })
     })

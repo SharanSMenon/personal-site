@@ -1,36 +1,42 @@
 .meta {
-  font-family: var(--font-serif);
-  font-size: var(--text-lg);
-  font-style: italic;
-  margin: 0 auto 1em;
-  max-width: var(--size-max-width);
-  padding-bottom: var(--size-gutter);
-  padding-left: var(--size-gutter);
-  position: relative;
-  top: -1em;
+  @apply font-serif text-xl italic relative -top-4 p-6;
 }
 
 .article {
-  display: grid;
-  font-size: var(--text-prose);
-  gap: var(--space-xl);
-  letter-spacing: var(--text-prose-tracking);
-  line-height: var(--loose);
-  padding: var(--size-gutter) var(--size-gutter) calc(var(--size-gutter) * 2);
+  @apply grid text-base gap-5 leading-loose;
 }
 
 .body {
-  max-width: 48rem;
+  @apply max-w-screen-md
+}
+
+pre {
+  @apply rounded-md mb-3;
 }
 
 .article a {
-  border-bottom: 1.5px solid currentColor;
-  font-weight: var(--medium);
+  border-bottom: 2px solid currentColor;
+  @apply font-medium;
 }
 
 .article a:hover {
-  border-bottom-color: transparent;
-  color: var(--primary);
+  @apply text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-500 border-b-2 border-sky-500;
+}
+
+.article blockquote {
+  @apply border-l-4 border-blue-500 px-2 my-2;
+}
+
+.articleNavigation {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  list-style: none;
+  padding: 0;
+}
+
+.article ol {
+  list-style: decimal;
 }
 
 .article p {
@@ -40,30 +46,21 @@
 
 .article h1,
 .article h2 {
-  font-size: var(--text-2xl);
-  margin-top: var(--space-3xl);
+  @apply text-3xl font-semibold my-5;
 }
 
-.article h3,
+.article h3 {
+  @apply text-2xl font-medium;
+}
+
 .article h4,
 .article h5,
 .article h6 {
-  font-size: var(--text-prose);
-  font-weight: var(--semibold);
-  margin-bottom: 0.5em;
-  margin-top: 3em;
+  @apply font-semibold text-xl;
 }
 
 .article li {
   margin-bottom: 0.5em;
-}
-
-.articleNavigation {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  list-style: none;
-  padding: 0;
 }
 
 @media (min-width: 768px) {

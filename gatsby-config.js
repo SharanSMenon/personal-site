@@ -9,9 +9,19 @@ module.exports = {
   },
   plugins: [
     "gatsby-transformer-sharp",
+    {
+      resolve: "gatsby-transformer-remark",
+      options: {
+        plugins: [
+          "gatsby-remark-katex",
+          "gatsby-remark-prismjs"
+        ]
+      }
+    },
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sharp",
     "gatsby-plugin-image",
+    "gatsby-plugin-postcss",
     {
       resolve: "gatsby-source-contentful",
       options: {

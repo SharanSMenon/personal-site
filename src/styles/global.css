@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.hyphens-auto {
+  hyphens: manual;
+}

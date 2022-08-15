@@ -1,0 +1,26 @@
+.footera {
+    padding: 0 10px;
+    z-index: 1;
+    @apply flex justify-center relative items-center transition-all duration-200;
+}
+
+.footera::after {
+    content: '';
+    z-index: -1;
+    transform: translate3d(-50%, -50%, 0) scale(0);
+    padding-bottom: 100%;
+    @apply bg-gradient-to-r from-cyan-500 to-blue-500 absolute block
+    transition-all duration-200 rounded-full w-full h-full top-1/2 left-1/2;
+  }
+
+.footera:hover {
+    @apply text-white;
+}
+
+.footera:hover::after {
+  transform: translate3d(-50%, -50%, 0) scale(0.9);
+}
+
+.list-item-footer:hover {
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-500
+}
