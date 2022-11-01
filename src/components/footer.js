@@ -12,11 +12,11 @@ const Footer = () => (
     <div className="p-5 border-t-2 border-t-gray-300 bg-blue-50 flex flex-col items-center gap-5">
       <div class="flex flex-row gap-3 text-xl">
         <a className="footera" target="_blank" rel="noreferrer"
-          href="https://github.com/SharanSMenon"><FaGithub /></a>
+          href="https://github.com/SharanSMenon" aria-label='github'><FaGithub /></a>
         <a className="footera" target="_blank" rel="noreferrer"
-          href="https://www.youtube.com/channel/UCOd6WzD7DHWctHqhkm1Q3tg"><FaYoutube /></a>
+          href="https://www.youtube.com/channel/UCOd6WzD7DHWctHqhkm1Q3tg" aria-label='youtube'><FaYoutube /></a>
         <a className="footera" target="_blank" rel="noreferrer"
-          href="https://www.instagram.com/sharansmenon22/"><FaInstagram /></a>
+          href="https://www.instagram.com/sharansmenon22/" aria-label='instagram'><FaInstagram /></a>
       </div>
       <div>
         <ul className="flex list-none gap-10">

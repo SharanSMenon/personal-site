@@ -3,15 +3,15 @@ import { Link, graphql } from 'gatsby'
 import get from 'lodash/get'
 // import { renderRichText } from 'gatsby-source-contentful/rich-text'
 import { documentToPlainTextString } from '@contentful/rich-text-plain-text-renderer'
-import { BLOCKS } from '@contentful/rich-text-types'
-import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+// import { BLOCKS } from '@contentful/rich-text-types'
+// import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 import Seo from '../components/seo'
 import Layout from '../components/layout'
 import Tags from '../components/tags'
-import * as styles from './blog-post.module.css'
 import BlogHero from '../components/blog-hero'
 import AnimateIn from '../components/animate-in'
+import "./blog-post.css";
 require(`katex/dist/katex.min.css`)
 
 
@@ -27,19 +27,19 @@ class BlogPostTemplate extends React.Component {
     console.log(markdown)
     const timeToRead = markdown.timeToRead
 
-    const options = {
-      renderNode: {
-        [BLOCKS.EMBEDDED_ASSET]: (node) => {
-          const { gatsbyImage, description } = node.data.target
-          return (
-            <GatsbyImage
-              image={getImage(gatsbyImage)}
-              alt={description}
-            />
-          )
-        },
-      },
-    };
+    // const options = {
+    //   renderNode: {
+    //     [BLOCKS.EMBEDDED_ASSET]: (node) => {
+    //       const { gatsbyImage, description } = node.data.target
+    //       return (
+    //         <GatsbyImage
+    //           image={getImage(gatsbyImage)}
+    //           alt={description}
+    //         />
+    //       )
+    //     },
+    //   },
+    // };
 
     return (
       <Layout location={this.props.location}>
@@ -56,20 +56,21 @@ class BlogPostTemplate extends React.Component {
           date={`${post.publishDate} - ${timeToRead} minute read`}
         />
         <div className="p-10 w-full">
-          <div className={styles.article}>
+          <div className="article">
             <AnimateIn threshold={0}>
-              <div className={styles.body}>
+              <div className="body">
                 <div dangerouslySetInnerHTML={{__html:markdown.html}}></div>
               </div>
             </AnimateIn >
+            <br></br>
             <AnimateIn>
-              <Tags tags={post.tags} />
+              <Tags tags={post.tags}/>
             </AnimateIn>
             <AnimateIn>
               <div className='mt-10'>
                 {(previous || next) && (
                   <nav>
-                    <ul className={styles.articleNavigation}>
+                    <ul className="articleNavigation">
                       {next && (
                         <li>
                           <Link to={`/blog/${next.slug}`} rel="next">

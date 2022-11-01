@@ -8,7 +8,7 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 import Seo from '../components/seo'
 import Layout from '../components/layout'
-import * as styles from './blog-post.module.css'
+import './blog-post.css'
 import AnimateIn from '../components/animate-in'
 import ProjectHero from '../components/project-hero'
 
@@ -50,9 +50,9 @@ class ProjectPageTemplate extends React.Component {
           scUrl = {project.sourceCodeUrl}
         />
         <div className="p-10 w-full">
-          <div className={styles.article}>
+          <div className="article">
             <AnimateIn >
-              <div className={styles.body}>
+              <div className="body">
                 {project.article?.raw && renderRichText(project.article, options)}
               </div>
             </AnimateIn >

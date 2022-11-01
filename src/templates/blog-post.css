@@ -3,11 +3,17 @@
 }
 
 .article {
-  @apply grid text-base gap-5 leading-loose;
+  @apply text-base leading-relaxed;
 }
 
+.footnotes {
+  @apply py-2 text-slate-500 text-sm leading-loose;
+}
+.footnotes hr {
+  @apply mb-2;
+}
 .body {
-  @apply max-w-screen-md
+  @apply max-w-screen-md;
 }
 
 pre {
@@ -27,6 +33,10 @@ pre {
   @apply border-l-4 border-blue-500 px-2 my-2;
 }
 
+.body ul {
+  list-style: disc;
+}
+
 .articleNavigation {
   display: flex;
   flex-wrap: wrap;
@@ -35,7 +45,7 @@ pre {
   padding: 0;
 }
 
-.article ol {
+.body ol {
   list-style: decimal;
 }
 
@@ -60,7 +70,7 @@ pre {
 }
 
 .article li {
-  margin-bottom: 0.5em;
+  @apply mb-2;
 }
 
 @media (min-width: 768px) {
