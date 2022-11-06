@@ -11,8 +11,8 @@ const Navigation = () => {
     delay: 200,
   })
 
-  const pages = ["Home", "Blog", "Projects"]
-  const urls = ["", "blog", "project"]
+  const pages = ["Home", "Blog", "Projects", "About"]
+  const urls = ["", "blog", "project", "about"]
 
   return (
     <nav id="top" role="navigation" className="flex flex-row w-full justify-between py-5 px-10 items-center bg-blue-50 md:mb-20 lg:mb-10 xs:mb-10" aria-label="Main">

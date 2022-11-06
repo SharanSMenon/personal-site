@@ -35,6 +35,7 @@ pre {
 
 .body ul {
   list-style: disc;
+  @apply ml-3;
 }
 
 .articleNavigation {
@@ -47,6 +48,7 @@ pre {
 
 .body ol {
   list-style: decimal;
+  @apply ml-3;
 }
 
 .article p {
@@ -60,7 +62,7 @@ pre {
 }
 
 .article h3 {
-  @apply text-2xl font-medium;
+  @apply text-2xl font-medium my-3;
 }
 
 .article h4,
